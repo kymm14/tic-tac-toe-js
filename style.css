@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@900&display=swap");
+
+* {
+  font-family: var(--font-family);
+}
+
+:root {
+  --tablero-width: 100vw;
+  --tablero-height: 100vh;
+  --font-family: "Geologica", sans-serif;
+  --color-white: #f5f5f5;
+  --color-red: #ff0000;
+  --color-yellow: #ffff00;
+}
+
+body {
+  background-image: url(img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.inicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 5em;
+  color: var(--color-yellow);
+  -webkit-text-stroke: 4px blue;
+}
+
+h2 {
+  padding-top: 0;
+  font-weight: 900;
+  font-size: 3em;
+  color: var(--color-yellow);
+  background-color: var(--color-red);
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+.container-game {
+  width: var(--tablero-width);
+  height: var(--tablero-height);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.players-turno {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.players-turno img {
+  width: 15%;
+}
+
+.tablero {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 6px;
+  width: calc(var(--tablero-width)-10);
+  height: calc(var(--tablero-height)-10);
+}
+
+.casilla {
+  cursor: pointer;
+  background-color: var(--color-white);
+  opacity: 0.5;
+  width: 20vmin;
+  height: 20vmin;
+}
+
+.container-resultado {
+  width: var(--tablero-width);
+  height: var(--tablero-height);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ganador-gif img {
+  width: 80%;
+}
+
+.empate-gif img {
+  width: 80%;
+}
+
+.boton {
+  margin-top: 1em;
+}
+
+.marcador {
+  width: 100%;
+}
+
+img {
+  pointer-events: none;
+}
+
+@media (min-width: 576px) {
+  .players-turno img {
+    width: 10%;
+  }
+
+  h1 {
+    font-size: 6em;
+  }
+
+  h2 {
+    font-size: 4em;
+  }
+
+  h4 {
+    font-size: 1.5em;
+  }
+
+  .ganador-gif img {
+    width: 100%;
+  }
+
+  .empate-gif img {
+    width: 100%;
+  }
+}
