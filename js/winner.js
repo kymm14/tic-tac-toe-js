@@ -69,7 +69,7 @@ const returnHome = () => {
 
 // FUNCIONALIDAD DEL JUEGO
 
-const Winner = (jugador, mapCasilla) => {
+const winner = (jugador, mapCasilla) => {
   const playerWinner = () => {
     if (jugador == "x") {
       root.innerHTML = getWinnerHTML(game.player2.name);
@@ -78,71 +78,26 @@ const Winner = (jugador, mapCasilla) => {
     }
   };
 
-  // POSIBLES COMBINACIONES GANADORAS
-  // [0, 1, 2],
-  // [3, 4, 5],
-  // [6, 7, 8],
-  // [0, 3, 6],
-  // [1, 4, 7],
-  // [2, 5, 8],
-  // [0, 4, 8],
-  // [2, 4, 6],
+  const winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
 
-  if (
-    mapCasilla[0] == jugador &&
-    mapCasilla[1] == jugador &&
-    mapCasilla[2] == jugador
-  ) {
-    playerWinner();
-  }
-  if (
-    mapCasilla[3] == jugador &&
-    mapCasilla[4] == jugador &&
-    mapCasilla[5] == jugador
-  ) {
-    playerWinner();
-  }
-  if (
-    mapCasilla[6] == jugador &&
-    mapCasilla[7] == jugador &&
-    mapCasilla[8] == jugador
-  ) {
-    playerWinner();
-  }
-  if (
-    mapCasilla[0] == jugador &&
-    mapCasilla[3] == jugador &&
-    mapCasilla[6] == jugador
-  ) {
-    playerWinner();
-  }
-  if (
-    mapCasilla[1] == jugador &&
-    mapCasilla[4] == jugador &&
-    mapCasilla[7] == jugador
-  ) {
-    playerWinner();
-  }
-  if (
-    mapCasilla[2] == jugador &&
-    mapCasilla[5] == jugador &&
-    mapCasilla[8] == jugador
-  ) {
-    playerWinner();
-  }
-  if (
-    mapCasilla[0] == jugador &&
-    mapCasilla[4] == jugador &&
-    mapCasilla[8] == jugador
-  ) {
-    playerWinner();
-  }
-  if (
-    mapCasilla[2] == jugador &&
-    mapCasilla[4] == jugador &&
-    mapCasilla[6] == jugador
-  ) {
-    playerWinner();
+  for (const combination of winningCombinations) {
+    const [a, b, c] = combination;
+    if (
+      mapCasilla[a] === jugador &&
+      mapCasilla[b] === jugador &&
+      mapCasilla[c] === jugador
+    ) {
+      playerWinner();
+    }
   }
   if (
     mapCasilla[0] != undefined &&

@@ -51,7 +51,7 @@ const funcionJuego = () => {
         mapFichas[elemento.id] = "o";
       }
       ronda = !ronda;
-      Winner(mapFichas[elemento.id], mapFichas);
+      winner(mapFichas[elemento.id], mapFichas);
     }
   }
 
@@ -61,7 +61,6 @@ const funcionJuego = () => {
       (event) => {
         const elemento = event.target;
         capturaEvento(elemento);
-        console.log(i);
       },
       { once: true }
     );

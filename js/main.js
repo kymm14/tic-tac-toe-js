@@ -75,7 +75,7 @@ const setPlay = () => {
 
 // FUNCION PARA LA MUSICA
 
-const playMusic = () => {
+const addEventMusic = () => {
   let sound = new Audio("./music/toyStory.mp3");
   botonPlayMusic.addEventListener("click", () => {
     sound.play();
@@ -88,4 +88,4 @@ const playMusic = () => {
 // FUNCIONES QUE LLAMAN A LA VISTA PRINCIPAL CON LOS NOMBRES GUARDADOS
 renderInicio();
 setPlay();
-playMusic();
+addEventMusic();
